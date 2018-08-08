@@ -1,0 +1,11 @@
+<div class="translateForm">
+  <form>
+    <div class="field">
+      <label class="label">Translate What's on Your Mind.</label>
+      <div class="control">
+        <input class="input is-success" type="text" [(ngModel)]="textToTranslate" name="textToTranslate" placeholder="Type Text">
+      </div>
+    </div>
+    <button class="button is-primary is-medium" (click)="onTranslate($event)">Submit</button>
+  </form>
+</div>
