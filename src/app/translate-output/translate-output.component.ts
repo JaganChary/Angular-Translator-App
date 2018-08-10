@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-translate-output',
@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./translate-output.component.css']
 })
 export class TranslateOutputComponent implements OnInit {
-
+  
+  @Input() outputMessage: string;
   constructor() { }
 
   ngOnInit() {
+    this.outputMessage
   }
 
 }
