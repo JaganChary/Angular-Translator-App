@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-translate-form',
@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TranslateFormComponent implements OnInit {
   textToTranslate: string = '';
+  @Output() messageEvent = new EventEmitter<string>();
+
   constructor() { }
 
   ngOnInit() {
@@ -14,7 +16,8 @@ export class TranslateFormComponent implements OnInit {
   }
 
   onTranslate(e): any {
-    alert(this.textToTranslate);
+    
     e.preventDefault();
+    this.messageEvent.emit(this.textToTranslate);
   }
 }
